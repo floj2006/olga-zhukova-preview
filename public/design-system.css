@@ -1,0 +1,43 @@
+/* Semantic aliases preserve the source project's exact colour values. */
+:root {
+  --color-background: var(--bg);
+  --color-background-soft: var(--dark);
+  --color-surface: var(--dark);
+  --color-surface-light: var(--ivory);
+  --color-text: var(--ivory);
+  --color-text-muted: var(--muted);
+  --color-accent: var(--gold);
+  --color-accent-soft: var(--champagne);
+  --color-border: var(--line);
+  --color-border-soft: rgba(243, 231, 195, 0.13);
+  --color-success: var(--champagne);
+  --color-danger: var(--ivory);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 144px;
+  --type-label: 0.75rem;
+  --type-body: clamp(1rem, 0.94rem + 0.25vw, 1.125rem);
+  --type-heading: clamp(44px, 5.4vw, 84px);
+  --type-display: clamp(58px, 7vw, 112px);
+  --container-wide: 1440px;
+  --container-reading: 680px;
+  --radius-none: 0;
+  --radius-field: 3px;
+  --radius-dialog: 12px;
+  --z-base: 1;
+  --z-header: 50;
+  --z-menu: 60;
+  --z-dialog: 100;
+  --duration-fast: 180ms;
+  --duration-normal: 400ms;
+  --duration-editorial: 700ms;
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 24px 70px rgba(13, 12, 10, 0.22);
+}

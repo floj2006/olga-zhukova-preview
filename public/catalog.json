@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "firstMeetingFree": true,
+  "services": [
+    {
+      "id": "host",
+      "title": "Ведущая",
+      "description": "Ольга Жукова — ведение вашего мероприятия.",
+      "unit": "hour",
+      "price": 8000,
+      "from": false,
+      "category": "Команда",
+      "active": true
+    },
+    {
+      "id": "dj",
+      "title": "DJ со стандартной аппаратурой",
+      "description": "Музыкальное сопровождение. Стандартный комплект аппаратуры уже включён.",
+      "unit": "hour",
+      "price": 3000,
+      "from": false,
+      "category": "Команда",
+      "active": true
+    },
+    {
+      "id": "projector",
+      "title": "Проектор и экран",
+      "description": "Прокат комплекта для фото, видео и презентаций.",
+      "unit": "item",
+      "price": 3000,
+      "from": false,
+      "category": "Оборудование",
+      "active": true
+    },
+    {
+      "id": "led",
+      "title": "Медиа- и LED-экраны",
+      "description": "Стоимость зависит от размера экрана и площадки.",
+      "unit": "item",
+      "price": 10000,
+      "from": true,
+      "category": "Оборудование",
+      "active": true
+    },
+    {
+      "id": "sound",
+      "title": "Дополнительный звук",
+      "description": "Расширенный комплект под масштаб и акустику площадки.",
+      "unit": "item",
+      "price": 15000,
+      "from": true,
+      "category": "Оборудование",
+      "active": true
+    },
+    {
+      "id": "light",
+      "title": "Дополнительный свет",
+      "description": "Световое оформление под пространство и программу вечера.",
+      "unit": "item",
+      "price": 25000,
+      "from": true,
+      "category": "Оборудование",
+      "active": true
+    },
+    {
+      "id": "consultation",
+      "title": "Дополнительная консультация",
+      "description": "Первая встреча бесплатна. Каждая следующая — по этому тарифу.",
+      "unit": "meeting",
+      "price": 1000,
+      "from": false,
+      "category": "Подготовка",
+      "active": true
+    },
+    {
+      "id": "organization",
+      "title": "Организация мероприятия",
+      "description": "Поиск подрядчиков, артистов и площадок.",
+      "unit": "item",
+      "price": 15000,
+      "from": false,
+      "category": "Подготовка",
+      "active": true
+    },
+    {
+      "id": "coordinator",
+      "title": "Координатор на банкет",
+      "description": "Координация в день вашего мероприятия.",
+      "unit": "item",
+      "price": 10000,
+      "from": false,
+      "category": "Команда",
+      "active": true
+    }
+  ],
+  "gallery": []
+}

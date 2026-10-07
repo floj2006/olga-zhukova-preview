@@ -1,0 +1,209 @@
+.availability-dialog {
+  width: min(510px, calc(100% - 24px));
+  max-height: calc(100svh - 24px);
+  margin: auto;
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--dark);
+  color: var(--ivory);
+  overflow-y: auto;
+}
+.availability-dialog[open] {
+  animation: calendar-open 0.35s var(--ease) both;
+}
+.availability-dialog::backdrop {
+  background: color-mix(in srgb, var(--bg) 83%, transparent);
+  backdrop-filter: blur(8px);
+}
+.availability-dialog > .eyebrow {
+  font-size: 9px;
+  padding-right: 22px;
+}
+.availability-dialog h2 {
+  font-size: 46px;
+  margin: 20px 0 25px;
+}
+.calendar-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.calendar-navigation h3 {
+  font: 500 15px/1.5 var(--sans);
+  text-transform: capitalize;
+}
+.calendar-navigation button {
+  width: 44px;
+  height: 44px;
+  color: var(--champagne);
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.calendar-navigation button:disabled {
+  opacity: 0.3;
+}
+.calendar-weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+.calendar-weekdays {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.calendar-days {
+  min-height: 248px;
+  align-content: start;
+}
+.calendar-days button {
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ivory);
+  font-size: 14px;
+  position: relative;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.calendar-days button:not(:disabled):hover {
+  border-color: var(--gold);
+  background: var(--bg);
+}
+.calendar-days button[data-busy="true"] {
+  color: var(--muted);
+  background: var(--bg);
+  text-decoration: line-through;
+  text-decoration-color: var(--gold);
+}
+.calendar-days button[data-busy="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+.calendar-days button[aria-pressed="true"] {
+  border-color: var(--gold);
+  background: var(--champagne);
+  color: var(--bg);
+}
+.calendar-days button[aria-current="date"] {
+  border-bottom-color: var(--gold);
+}
+.calendar-days button:disabled {
+  opacity: 0.35;
+}
+.calendar-legend {
+  display: flex;
+  gap: 23px;
+  color: var(--muted);
+  font-size: 11px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.calendar-legend i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--champagne);
+  border-radius: 50%;
+}
+.calendar-legend i.busy {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.calendar-feedback {
+  margin: 20px 0;
+  min-height: 44px;
+}
+#calendar-status {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--champagne);
+}
+#calendar-request {
+  width: 100%;
+  margin-top: 17px;
+  padding: 15px 12px;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+#calendar-retry {
+  margin-top: 12px;
+  background: none;
+  border: 0;
+  color: var(--champagne);
+  font-size: 12px;
+}
+.calendar-disclaimer {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.calendar-phone {
+  display: inline-block;
+  color: var(--champagne);
+  font-size: 11px;
+  margin-top: 15px;
+}
+.request-date {
+  font-size: 13px;
+  color: var(--champagne);
+  padding: 0 0 20px;
+}
+@keyframes calendar-open {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .availability-dialog {
+    padding: 30px 15px 22px;
+  }
+  .availability-dialog h2 {
+    font-size: 37px;
+  }
+  .calendar-days,
+  .calendar-weekdays {
+    gap: 1px;
+  }
+  .calendar-days button {
+    height: 44px;
+    font-size: 13px;
+  }
+  .calendar-days {
+    min-height: 224px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .availability-dialog[open] {
+    animation: none;
+  }
+  .calendar-days button {
+    transition: none;
+  }
+}

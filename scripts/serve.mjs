@@ -1,45 +1,18 @@
-import http from "node:http";
-import { readFile, stat } from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const root = fileURLToPath(new URL("../dist/", import.meta.url));
-const port = Number(process.env.PORT || 4173);
-const mime = {
-  ".html": "text/html; charset=utf-8",
-  ".css": "text/css; charset=utf-8",
-  ".js": "application/javascript; charset=utf-8",
-  ".jpg": "image/jpeg",
-  ".svg": "image/svg+xml",
-  ".woff2": "font/woff2",
-  ".ttf": "font/ttf",
-};
-http
-  .createServer(async (req, res) => {
-    try {
-      const pathname = decodeURIComponent(
-        new URL(req.url, "http://localhost").pathname,
-      );
-      let file = path.resolve(root, "." + pathname);
-      const relative = path.relative(root, file);
-      if (relative.startsWith("..") || path.isAbsolute(relative)) {
-        res.writeHead(403).end("Forbidden");
-        return;
-      }
-      if ((await stat(file)).isDirectory())
-        file = path.join(file, "index.html");
-      const data = await readFile(file);
-      res.writeHead(200, {
-        "Content-Type": mime[path.extname(file)] || "application/octet-stream",
-        "Cache-Control": "no-cache",
-      });
-      res.end(data);
-    } catch {
-      res
-        .writeHead(404, { "Content-Type": "text/plain; charset=utf-8" })
-        .end("Not found");
-    }
-  })
-  .listen(port, "127.0.0.1", () =>
-    console.log(`Olga Zhukova: http://127.0.0.1:${port}`),
-  );
+// Local Next server used by isolated browser tests. Production uses Next Route Handlers.
+import http from 'node:http';
+import next from 'next';
+import { createApiHandler } from '../server/index.mjs';
+export async function createSiteServer(options={}) {
+ const api=await createApiHandler(options);
+ const existing = new Map(['uncaughtException','unhandledRejection'].map(e=>[e,process.listeners(e)]));
+ const app=next({dev:false,quiet:true});
+ await app.prepare();
+ for(const [event,listeners] of existing) for(const listener of process.listeners(event)) if(!listeners.includes(listener)) process.removeListener(event,listener);
+ const render=app.getRequestHandler();
+ const server=http.createServer(async(req,res)=>{
+  if(await api(req,res))return;
+  await render(req,res);
+ });
+ server.on('close',()=>{app.close();});
+ return server;
+}

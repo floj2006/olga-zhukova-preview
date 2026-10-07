@@ -1,0 +1,923 @@
+/* One shared booking flow in the Hero and the full price list. */
+.hero {
+  height: auto;
+  min-height: 100svh;
+  max-height: none;
+}
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 408px;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  padding-block: 112px 85px;
+  position: relative;
+  z-index: 2;
+}
+.hero-layout .hero-content {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+}
+.hero-layout .hero-content > .eyebrow {
+  font-size: 10px;
+  margin-bottom: 27px;
+}
+.hero-layout h1 {
+  font-size: clamp(62px, 6.5vw, 98px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+.hero-layout .hero-byline {
+  margin: 32px 0;
+}
+.hero-layout .hero-byline > span {
+  font-size: 19px;
+}
+.hero-layout .hero-byline p {
+  max-width: 390px;
+  font-size: 13px;
+}
+.hero-layout .hero-actions {
+  gap: 23px;
+}
+.hero-calendar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--champagne);
+  font-size: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+.hero-calendar-link span {
+  font-size: 20px;
+}
+.hero-side {
+  display: none;
+}
+.hero-booking {
+  min-width: 0;
+  align-self: center;
+  background: color-mix(in srgb, var(--dark) 94%, transparent);
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 70px color-mix(in srgb, var(--bg) 40%, transparent);
+  backdrop-filter: blur(12px);
+  border-radius: 9px;
+  padding: 20px 24px 16px;
+}
+.hero-booking-heading .eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.13em;
+}
+.hero-booking-heading h2 {
+  font: 400 34px/1.12 var(--serif);
+  margin: 7px 0 11px;
+  letter-spacing: -0.025em;
+}
+.booking-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 12px;
+  position: relative;
+}
+.booking-tabs::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: var(--gold);
+  transition: transform 0.4s var(--ease);
+}
+.booking-tabs[data-active="services"]::after {
+  transform: translateX(100%);
+}
+.booking-tabs > button {
+  width: 50%;
+  min-height: 40px;
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  font-size: 12px;
+  text-align: left;
+  padding: 8px 0 10px;
+  transition: color 0.25s;
+}
+.booking-tabs > button > span:first-child {
+  font-size: 10px;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+.booking-tabs > button[aria-selected="true"] {
+  color: var(--champagne);
+}
+#hero-services-count:not(:empty) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--champagne);
+  color: var(--dark);
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 10px;
+  margin-left: 8px;
+}
+#booking-date-panel,
+#booking-services-panel {
+  min-height: 326px;
+}
+.hero-booking .calendar-navigation {
+  margin-bottom: 7px;
+}
+.hero-booking .calendar-navigation h3 {
+  font-size: 13px;
+}
+.hero-booking .calendar-navigation button {
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
+}
+.hero-booking .calendar-navigation button:hover:not(:disabled) {
+  background: var(--bg);
+  border-color: var(--gold);
+  transform: translateX(-2px);
+}
+.hero-booking #calendar-next:hover:not(:disabled) {
+  transform: translateX(2px);
+}
+.hero-booking .calendar-weekdays {
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+.hero-booking .calendar-days {
+  gap: 2px;
+  min-height: 202px;
+}
+.hero-booking .calendar-days button {
+  height: 32px;
+  font-size: 12px;
+}
+.hero-booking .calendar-days button[data-busy="true"]::after {
+  bottom: 3px;
+}
+.hero-booking .calendar-legend {
+  border: 0;
+  padding-top: 7px;
+  font-size: 10px;
+  gap: 18px;
+}
+.hero-booking .calendar-feedback {
+  margin: 9px 0 0;
+  min-height: 33px;
+}
+.hero-booking #calendar-status {
+  font-size: 11px;
+  line-height: 1.7;
+}
+#calendar-services {
+  padding: 6px 0;
+  margin-top: 2px;
+  background: none;
+  border: 0;
+  color: var(--champagne);
+  font-size: 12px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.hero-booking-footer {
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 10px;
+}
+.hero-chosen-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 25px;
+}
+#hero-date-label {
+  color: var(--muted);
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 11px;
+  text-align: left;
+}
+#hero-date-label:hover {
+  color: var(--champagne);
+}
+#hero-clear-date {
+  min-width: 28px;
+  min-height: 28px;
+  border: 0;
+  background: none;
+  color: var(--champagne);
+  font-size: 20px;
+}
+.hero-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 5px 0 12px;
+}
+.hero-total > span {
+  color: var(--muted);
+  font-size: 10px;
+  max-width: 120px;
+  line-height: 1.5;
+}
+.hero-total strong {
+  font: 400 32px/1.1 var(--serif);
+  color: var(--champagne);
+  white-space: nowrap;
+}
+.hero-booking #hero-request {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  justify-content: space-between;
+  padding: 10px 15px;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  background: var(--champagne);
+  color: var(--bg);
+  border-color: var(--champagne);
+  text-transform: none;
+}
+.hero-booking #hero-request:hover:not(:disabled) {
+  background: var(--light-gold);
+  border-color: var(--light-gold);
+}
+.hero-booking #hero-request > span {
+  font-size: 20px;
+  line-height: 1;
+}
+.hero-booking-note {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+.booking-feedback {
+  color: var(--champagne);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.booking-feedback:not(:empty) {
+  padding: 12px 0;
+}
+.hero-event-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.hero-event-label select {
+  max-width: 210px;
+  width: 66%;
+  font: 12px var(--sans);
+  background: var(--bg);
+  color: var(--champagne);
+  border: 1px solid var(--line);
+  padding: 10px;
+  border-radius: 4px;
+  min-height: 38px;
+}
+.hero-service-options {
+  height: 228px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--dark);
+  padding-right: 7px;
+  border-bottom: 1px solid var(--line);
+  scroll-padding-block: 10px;
+}
+.booking-loading {
+  color: var(--muted);
+  font-size: 12px;
+  padding: 20px 0;
+}
+.hero-service-option {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.hero-service-option .service-choice {
+  gap: 9px;
+}
+.hero-service-option .service-description strong {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.hero-service-option .service-description small {
+  display: none;
+}
+.hero-service-option .service-actions {
+  gap: 6px;
+}
+.hero-service-option .service-rate {
+  font-size: 11px;
+}
+.hero-service-option .service-line-total {
+  display: none;
+}
+.hero-service-option[data-selected="false"] .service-quantity {
+  display: none;
+}
+.hero-service-option .service-quantity {
+  opacity: 1;
+  height: 31px;
+}
+.hero-service-option .service-quantity input {
+  width: 22px;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  color: var(--ivory);
+  font: 11px var(--sans);
+  padding: 0;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.hero-service-option .service-quantity button {
+  width: 26px;
+  height: 29px;
+  font-size: 15px;
+}
+.hero-service-option input[type="checkbox"],
+.service-builder input[type="checkbox"]:not([name="consent"]) {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+.hero-service-option input[type="checkbox"],
+.service-option input[type="checkbox"] {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  border: 1px solid var(--muted);
+  border-radius: 3px;
+  background: transparent;
+}
+.hero-service-option input[type="checkbox"]:checked,
+.service-option input[type="checkbox"]:checked {
+  background: var(--champagne);
+  border-color: var(--champagne);
+}
+.hero-service-option input[type="checkbox"]:checked::before,
+.service-option input[type="checkbox"]:checked::before {
+  content: "";
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid var(--bg);
+  border-bottom: 2px solid var(--bg);
+  transform: translateY(-1px) rotate(-45deg);
+}
+.hero-meetings {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2px 12px;
+  padding-top: 12px;
+  color: var(--champagne);
+  font-size: 11px;
+  background: var(--dark);
+}
+.hero-meetings span {
+  grid-row: 2;
+  grid-column: 1;
+  font-size: 10px;
+  color: var(--muted);
+}
+.hero-meetings input {
+  width: 48px;
+  min-height: 35px;
+  grid-column: 2;
+  grid-row: 1/3;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--ivory);
+  text-align: center;
+  font: 12px var(--sans);
+  border-radius: 3px;
+}
+/* Full estimate: prices, duration and selected line totals are distinct. */
+.calculator.section {
+  padding-block: 72px;
+}
+.calculator .section-heading {
+  margin-bottom: 28px;
+}
+.calculator .section-heading h2 {
+  max-width: 690px;
+  font-size: clamp(42px, 4vw, 58px);
+}
+.calculator .section-heading h2 br {
+  display: none;
+}
+.calculator .section-heading h2 em {
+  margin-left: 0.12em;
+}
+.calculator .section-heading .section-aside {
+  font-size: 12px;
+}
+.calculator .service-builder {
+  grid-template-columns: minmax(0, 1fr) 365px;
+  gap: clamp(30px, 4vw, 64px);
+}
+.calculator .service-main {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.calculator .event-fields {
+  gap: 20px;
+  padding-bottom: 15px;
+}
+.calculator .event-fields label {
+  font-size: 12px;
+}
+.calculator .event-fields :is(input, select) {
+  background: var(--dark);
+  border-radius: 4px;
+}
+.calculator .builder-intro {
+  margin-bottom: 12px;
+}
+.calculator .service-filters {
+  gap: 4px;
+  padding-bottom: 10px;
+}
+.service-options[data-category]:not([data-category="all"]) .service-category {
+  display: none;
+}
+.service-option {
+  padding: 13px 9px;
+  gap: 20px;
+  transition: background 0.25s;
+}
+.service-option[data-selected="true"] {
+  background: color-mix(in srgb, var(--dark) 75%, transparent);
+}
+.service-option .service-choice {
+  gap: 13px;
+}
+.service-option .service-description strong {
+  font-size: 15px;
+}
+.service-option .service-description small {
+  font-size: 11px;
+  line-height: 1.6;
+  max-width: 360px;
+}
+.service-option .service-actions {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: end;
+  gap: 5px 10px;
+}
+.service-option .service-rate {
+  grid-column: 1/-1;
+  justify-self: end;
+}
+.service-option .service-quantity {
+  grid-column: 1;
+}
+.service-option .service-line-total {
+  grid-column: 2;
+}
+.service-option .service-rate {
+  font-size: 12px;
+}
+.service-line-total {
+  color: var(--ivory);
+  font-size: 14px;
+  font-weight: 500;
+}
+.service-option[data-selected="false"] .service-line-total {
+  display: none;
+}
+.service-option[data-selected="true"] .service-rate {
+  color: var(--muted);
+  font-size: 11px;
+}
+.service-category {
+  font-size: 10px;
+  padding: 25px 12px 9px;
+}
+.reset-services {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 13px 0 0 auto;
+  padding: 6px 0;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+.reset-services:hover {
+  color: var(--champagne);
+}
+.reset-services span {
+  font-size: 20px;
+  line-height: 1;
+}
+.calculator .estimate-panel {
+  top: 116px;
+  padding: 23px 23px 18px;
+}
+.estimate-heading .eyebrow {
+  display: none;
+}
+.estimate-heading h3 {
+  font-size: 31px;
+  margin-top: 0;
+}
+.estimate-panel .selected-count {
+  margin-top: 7px;
+}
+.estimate-panel .price-label {
+  margin-top: 18px;
+}
+.estimate-panel .builder-price {
+  font-size: 49px;
+}
+.builder-summary {
+  max-height: 190px;
+  margin-top: 14px;
+}
+.estimate-details {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 18px 0 14px;
+}
+.estimate-details summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 11px;
+  color: var(--champagne);
+  list-style: none;
+  padding: 12px 0;
+  cursor: pointer;
+}
+.estimate-details summary::-webkit-details-marker {
+  display: none;
+}
+.estimate-details summary > span {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.25s;
+}
+.estimate-details[open] summary > span {
+  transform: rotate(45deg);
+}
+.estimate-details .builder-summary {
+  margin: 0 0 10px;
+}
+.builder-summary > div {
+  gap: 9px;
+  font-size: 11px;
+  padding: 10px 0;
+}
+.builder-summary dd {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.remove-service {
+  padding: 0;
+  min-width: 25px;
+  min-height: 28px;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+.remove-service:hover {
+  color: var(--champagne);
+}
+.selected-count,
+.estimate-panel .price-label {
+  font-size: 11px;
+}
+.estimate-free {
+  font-size: 11px;
+}
+.estimate-panel .estimate-actions {
+  margin-top: 17px;
+}
+.consultation-block {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 15px;
+}
+.consultation-block > .eyebrow,
+.consultation-block > p {
+  display: none;
+}
+.consultation-block h3 {
+  font: 500 13px/1.6 var(--sans);
+  margin: 0;
+}
+.consultation-block h3 em {
+  font-style: normal;
+}
+.consultation-block .extra-meetings {
+  margin-top: 10px;
+  gap: 7px;
+  font-size: 11px;
+}
+.consultation-block .extra-meetings input {
+  width: 52px;
+}
+@media (max-width: 800px) {
+  .calculator.section {
+    padding-block: 52px;
+  }
+  .calculator .section-heading {
+    gap: 15px;
+    margin-bottom: 22px;
+  }
+  .calculator .section-heading .section-aside {
+    display: none;
+  }
+  .calculator .service-main {
+    padding-top: 15px;
+  }
+  .calculator .builder-intro {
+    display: none;
+  }
+  .calculator .service-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+    gap: 3px;
+  }
+  .calculator .service-filter {
+    flex-shrink: 0;
+    padding-inline: 10px;
+  }
+  .calculator .service-builder {
+    gap: 20px;
+  }
+  .calculator .reset-services {
+    margin-top: 6px;
+    font-size: 10px;
+    min-height: 30px;
+    padding-block: 4px;
+  }
+  .calculator .service-option {
+    padding-block: 12px;
+  }
+  .calculator .service-option .service-description strong {
+    font-size: 13px;
+  }
+  .calculator .service-option .service-description small {
+    font-size: 10px;
+  }
+  .calculator .service-option .service-actions {
+    gap: 5px;
+  }
+  .calculator .service-option .service-quantity button {
+    width: 25px;
+  }
+  .calculator .service-option .service-line-total {
+    display: none;
+  }
+  .calculator .estimate-heading h3 {
+    font-size: 27px;
+  }
+  .calculator .estimate-panel .price-label {
+    margin: 12px 0 4px;
+  }
+  .calculator .estimate-panel .builder-price {
+    font-size: 43px;
+  }
+  .calculator #open-request {
+    min-height: 48px;
+  }
+  .calculator .builder-contact {
+    margin-top: 15px;
+  }
+  .calculator .consultation-block {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+  .calculator .consultation-block h3 {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1700px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr) 440px;
+  }
+  .hero-booking {
+    padding: 22px 29px 18px;
+  }
+}
+@media (max-width: 1100px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr) 370px;
+    gap: 30px;
+  }
+  .hero-layout h1 {
+    font-size: clamp(49px, 6.3vw, 73px);
+  }
+  .hero-layout .hero-byline > span {
+    font-size: 17px;
+  }
+  .hero-booking {
+    padding: 20px 19px 16px;
+  }
+  .hero-layout .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .calculator .service-builder {
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 28px;
+  }
+  .service-option {
+    padding-inline: 7px;
+    gap: 12px;
+  }
+}
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    gap: 35px;
+    padding-top: 130px;
+    padding-bottom: 95px;
+  }
+  .hero-layout .hero-content {
+    padding: 0;
+  }
+  .hero-layout h1 {
+    font-size: clamp(47px, 9vw, 72px);
+  }
+  .hero-layout .hero-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  .hero-layout .hero-byline {
+    margin: 24px 0;
+  }
+  .hero-booking {
+    width: 100%;
+    max-width: 480px;
+    justify-self: center;
+  }
+  .hero-layout .hero-content > .eyebrow {
+    margin-bottom: 20px;
+  }
+  .hero-bottom {
+    bottom: 22px;
+  }
+  .hero-layout .hero-last {
+    white-space: normal;
+  }
+}
+@media (max-width: 800px) {
+  .calculator .service-builder {
+    grid-template-columns: 1fr;
+  }
+  .calculator .estimate-panel {
+    position: static;
+  }
+}
+@media (max-width: 480px) {
+  .hero-layout {
+    padding-top: 114px;
+    padding-bottom: 89px;
+    gap: 27px;
+  }
+  .hero-layout h1 {
+    font-size: clamp(41px, 11.8vw, 57px);
+  }
+  .hero-layout .hero-byline > span {
+    font-size: 16px;
+  }
+  .hero-layout .hero-byline p {
+    font-size: 12px;
+  }
+  .hero-layout .hero-actions {
+    flex-direction: row;
+    gap: 10px 17px;
+  }
+  .hero-layout .hero-content .button {
+    width: 100%;
+  }
+  .hero-calendar-link {
+    display: none;
+  }
+  .hero-booking {
+    padding: 18px 15px 15px;
+  }
+  .hero-booking-heading h2 {
+    font-size: 33px;
+  }
+  .hero-booking .calendar-days button {
+    height: 36px;
+  }
+  .hero-booking .calendar-days {
+    min-height: 226px;
+  }
+  #booking-date-panel,
+  #booking-services-panel {
+    min-height: 352px;
+  }
+  .hero-service-options {
+    height: 248px;
+  }
+  .hero-total strong {
+    font-size: 29px;
+  }
+  .hero-service-option {
+    gap: 9px;
+  }
+  .hero-service-option .service-rate {
+    font-size: 10px;
+  }
+  .hero-service-option .service-description strong {
+    font-size: 12px;
+  }
+  .service-option .service-description strong {
+    font-size: 14px;
+  }
+  .service-option .service-description small {
+    font-size: 11px;
+  }
+  .service-option {
+    padding: 13px 6px;
+  }
+  .service-option .service-rate {
+    font-size: 11px;
+  }
+  .service-line-total {
+    font-size: 13px;
+  }
+  .calculator .estimate-panel {
+    padding: 20px;
+  }
+  .calculator .event-fields {
+    gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-option,
+  .booking-tabs::after,
+  .booking-tabs > button,
+  .estimate-details summary > span,
+  .hero-booking .calendar-navigation button {
+    transition: none;
+  }
+}
+
+/* Safari native selects otherwise paint a light surface over champagne text. */
+:is(.hero-event-label, .event-fields) select {
+  appearance: none;
+  color-scheme: dark;
+  padding-right: 34px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--champagne) 50%),
+    linear-gradient(135deg, var(--champagne) 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 50%,
+    calc(100% - 12px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+[data-booking-term] p {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+:is(.hero-booking, .service-builder) input[type="number"] { color-scheme: dark; }

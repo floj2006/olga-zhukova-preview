@@ -1,0 +1,36 @@
+name: Checks
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+      - run: npm run test:seo
+      - run: npm run test:cloud-check
+      - run: npm run test:deployment
+      - run: npm run test:mvp
+      - run: npm run test:setup-admin
+      - run: npm run test:backend
+      - run: npm run test:analytics
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run test:mvp-browser
+      - run: npm run test:deployment-browser
+      - run: npm run test:gallery
+      - run: npm run test:content-editor
+      - run: npm run test:admin-regressions
+      - run: npm test
+      - run: npm run test:experience
+      - run: npm run test:loading
+      - run: npm run test:booking
+      - run: npm run test:webkit
+      - run: npm run test:analytics-browser
+
+      - run: npm run test:multipage
+      - run: npm run test:public-polish

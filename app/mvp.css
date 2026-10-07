@@ -1,0 +1,250 @@
+/* Existing palette; semantic refinements for the Next MVP. */
+.section {
+  padding-block: 100px;
+}
+.body-copy {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.section-aside {
+  font-size: 14px;
+}
+.eyebrow {
+  font-size: 11px;
+}
+.reason p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.reason {
+  padding-block: 22px;
+}
+.service-builder label,
+.builder-intro,
+.service-description small,
+.estimate-note,
+.request-reassurance {
+  font-size: 13px !important;
+}
+.service-builder input:not([type="checkbox"]),
+.service-builder select,
+.service-builder textarea {
+  font-size: 16px;
+}
+.service-option .service-description strong {
+  font-size: 15px;
+}
+.hero-trust {
+  display: flex;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+  color: var(--champagne);
+  font-size: 12px;
+}
+.hero-trust span + span::before {
+  content: "·";
+  margin-right: 16px;
+  color: var(--gold);
+}
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+}
+.faq .text-link {
+  margin-top: 24px;
+}
+.faq-items details {
+  border-bottom: 1px solid var(--line);
+}
+.faq-items summary {
+  cursor: pointer;
+  padding: 24px 0;
+  font-size: 17px;
+  color: var(--champagne);
+}
+.faq-items p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 24px;
+}
+.price-empty #price-unit {
+  display: none;
+}
+.price-empty .builder-price {
+  font-size: 32px;
+}
+.request-success {
+  padding: 12px 0;
+}
+.request-success h3 {
+  font-size: 34px;
+  margin: 12px 0;
+}
+.request-success p {
+  margin: 18px 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+.site-video {
+  width: 100%;
+  max-height: 70vh;
+  background: var(--dark);
+}
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+.review-list blockquote {
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+.review-list blockquote p {
+  font: 400 28px/1.4 var(--serif);
+}
+.review-list footer {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.content-editor {
+  display: grid;
+  gap: 24px;
+  max-width: 860px;
+}
+.content-review {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: grid;
+  gap: 16px;
+}
+@media (max-width: 700px) {
+  .section {
+    padding-block: 64px;
+  }
+  .hero .hero-layout {
+    padding: 104px 0 28px;
+    display: block;
+  }
+  .hero .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-layout h1 {
+    font-size: clamp(48px, 14vw, 72px);
+    width: 60%;
+    line-height: 1;
+    margin-top: 32px;
+    min-height: 145px;
+  }
+  .hero .hero-portrait {
+    position: absolute;
+    top: 150px;
+    right: 0;
+    width: 38%;
+    height: 180px;
+    z-index: 0;
+  }
+  .hero .hero-portrait .hero-image {
+    object-position: 50% 22%;
+  }
+  .hero-portrait figcaption {
+    display: none;
+  }
+  .hero-layout .hero-byline {
+    margin-block: 30px 22px;
+    max-width: none;
+  }
+  .hero-layout .hero-byline p {
+    font-size: 15px;
+  }
+  .hero-layout .hero-byline > span {
+    font-size: 22px;
+  }
+  .hero .hero-bottom {
+    position: static;
+    padding-block: 0 20px;
+  }
+  .hero {
+    min-height: 0;
+  }
+  .hero-layout .hero-actions {
+    gap: 12px;
+  }
+  .hero-trust {
+    font-size: 12px;
+    gap: 8px;
+  }
+  .hero-trust span + span::before {
+    margin-right: 8px;
+  }
+  .about-grid,
+  .principles-grid,
+  .program-grid {
+    gap: 32px;
+  }
+  .about-portrait {
+    max-width: 100%;
+  }
+  .about-portrait .portrait-frame {
+    height: 280px;
+    aspect-ratio: auto;
+  }
+  .about-portrait img {
+    width: 100%;
+    height: 100%;
+    object-position: 50% 25%;
+  }
+  .about .experience {
+    margin-block: 24px;
+  }
+  .about .experience-number {
+    font-size: 88px;
+  }
+  .reason p {
+    font-size: 14px;
+  }
+  .reason h3 {
+    font-size: 14px;
+  }
+  .reason {
+    gap: 20px;
+    padding-block: 20px;
+  }
+  .eyebrow {
+    font-size: 10px;
+  }
+  .final-cta {
+    min-height: 540px;
+  }
+  .final-content > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .faq-items summary {
+    font-size: 16px;
+    padding-block: 20px;
+  }
+  .review-list {
+    grid-template-columns: 1fr;
+  }
+  .request-dialog input,
+  .request-dialog textarea {
+    font-size: 16px;
+  }
+  .footer-main > p,
+  .footer nav a {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq * {
+    transition: none;
+  }
+}

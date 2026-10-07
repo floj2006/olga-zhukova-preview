@@ -1,0 +1,39 @@
+/* Portrait-led first screen. Existing palette and typefaces are unchanged. */
+.hero { display: block; background: var(--bg); min-height: min(900px, 100svh); }
+.hero .hero-shade { display: none; }
+.hero .hero-layout { grid-template-columns: 1fr .86fr; padding-block: 125px 100px; gap: clamp(36px, 6vw, 100px); }
+.hero-layout h1 { font-size: clamp(88px, 9.6vw, 148px); line-height: .88; }
+.hero-layout h1 em { color: var(--champagne); }
+.hero-layout .hero-byline { margin-block: 32px; }
+.hero-layout .hero-byline > span { font: 400 clamp(21px, 2vw, 28px)/1.2 var(--serif); letter-spacing: 0; }
+.hero-layout .hero-byline p { margin-top: 16px; font-size: 14px; line-height: 1.7; }
+.hero .hero-portrait { position: relative; margin: 0; min-width: 0; height: min(66svh, 650px); }
+.hero .hero-portrait .hero-image { position: static; width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; transform: none; opacity: 1; filter: none; }
+.hero-portrait figcaption { position: absolute; inset: auto 0 0; padding: 48px 24px 20px; background: linear-gradient(transparent, var(--bg)); color: var(--champagne); font-size: 11px; letter-spacing: .05em; }
+.hero-layout .hero-actions { flex-wrap: wrap; gap: 16px 28px; }
+.hero .hero-calendar-link { display: inline-flex; }
+.booking-dialog { padding: 0; width: min(480px, calc(100% - 24px)); max-height: calc(100svh - 32px); margin: auto; color: var(--text); background: var(--dark); border: 1px solid var(--line); border-radius: 9px; overscroll-behavior: contain; }
+.booking-dialog::backdrop { background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(6px); }
+.booking-dialog .hero-booking { border: 0; border-radius: 0; box-shadow: none; padding: 28px; }
+.hero-booking-heading { position: relative; padding-right: 34px; }
+.booking-close { position: absolute; right: -12px; top: -14px; width: 44px; height: 44px; background: transparent; border: 0; color: var(--champagne); font-size: 28px; cursor: pointer; }
+.booking-dialog .calendar-days button { min-height: 42px; }
+.booking-dialog[open] { animation: booking-reveal .35s var(--ease); }
+body:has(.booking-dialog[open]) { overflow: hidden; }
+@keyframes booking-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 900px) {
+  .hero .hero-layout { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .hero-layout h1 { font-size: clamp(70px, 11vw, 100px); }
+}
+@media (max-width: 600px) {
+  .hero .hero-layout { grid-template-columns: 1fr; gap: 30px; padding-block: 100px 30px; }
+  .hero-layout h1 { font-size: clamp(76px, 20vw, 110px); }
+  .hero-layout .hero-content > .eyebrow { margin-bottom: 20px; }
+  .hero-layout .hero-byline { margin-block: 22px; }
+  .hero-layout .hero-byline p { font-size: 13px; }
+  .hero .hero-portrait { height: 390px; }
+  .hero .hero-bottom { position: static; padding-block: 0 25px; }
+  .hero-layout .hero-actions { align-items: flex-start; flex-direction: column; gap: 6px; }
+  .booking-dialog .hero-booking { padding: 22px 16px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .booking-dialog[open] { animation: none; } }

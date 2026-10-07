@@ -1,0 +1,231 @@
+/* One booking flow using the site's existing palette. */
+.booking-flow {
+  width: min(620px, calc(100% - 24px));
+  max-height: calc(100dvh - 24px);
+  scroll-padding-top: 150px;
+}
+.booking-flow .hero-booking {
+  padding: 28px;
+}
+.booking-flow .booking-flow-header {
+  position: sticky;
+  top: -28px;
+  z-index: 3;
+  background: var(--dark);
+  padding-top: 1px;
+}
+.booking-flow .hero-booking-heading {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+.booking-flow .hero-booking-heading h2 {
+  font: 32px/1.1 var(--serif);
+  margin: 10px 0 18px;
+}
+.booking-flow .booking-close {
+  position: static;
+  flex-shrink: 0;
+  margin-left: auto;
+  min-width: 44px;
+  min-height: 44px;
+}
+.booking-flow .booking-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.booking-flow .booking-tabs::after {
+  display: none;
+}
+.booking-flow .booking-tabs button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 12px;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.booking-flow .booking-tabs > button > span:first-child {
+  margin-right: 0;
+  opacity: 1;
+}
+.booking-flow .booking-tabs button[aria-selected="true"] {
+  color: var(--champagne);
+  border-bottom-color: var(--gold);
+}
+.booking-flow #hero-services-count:not(:empty) {
+  margin-left: 0;
+  min-width: 17px;
+  height: 17px;
+  font-size: 9px;
+}
+.booking-flow .booking-content {
+  padding-top: 20px;
+}
+.booking-flow .calendar-navigation button {
+  min-width: 44px;
+  min-height: 44px;
+}
+.booking-flow .calendar-days button[aria-pressed="true"] {
+  background: var(--champagne);
+  color: var(--bg);
+  border-color: var(--gold);
+}
+.booking-flow .hero-service-options {
+  height: auto;
+  max-height: 340px;
+}
+.booking-flow .hero-service-option {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  padding: 14px 0;
+}
+.booking-flow .hero-service-option .service-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-left: 27px;
+}
+.booking-flow .hero-service-option .service-description strong {
+  font-size: 14px;
+}
+.booking-flow .hero-service-option .service-quantity {
+  height: 40px;
+}
+.booking-flow .hero-service-option .service-quantity input {
+  font-size: 16px;
+  width: 26px;
+}
+.booking-flow .hero-service-option .service-quantity button {
+  min-width: 36px;
+  min-height: 40px;
+}
+.booking-flow .hero-service-option .service-line-total {
+  display: none;
+}
+.booking-flow .service-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 12px 0;
+  gap: 4px;
+}
+.booking-flow .hero-booking-footer {
+  margin-top: 20px;
+}
+.booking-flow .hero-booking-note {
+  margin-bottom: 0;
+}
+.booking-flow .request-form {
+  display: block;
+}
+.booking-flow .request-fields h3 {
+  font: 26px/1.12 var(--serif);
+  margin: 0 0 16px;
+}
+.booking-flow .request-fields label {
+  font-size: 13px;
+}
+.booking-flow .request-fields input:not([type="checkbox"]),
+.booking-flow .request-fields textarea {
+  font-size: 16px;
+}
+.booking-flow .request-quote {
+  margin-bottom: 20px;
+  padding: 16px;
+}
+.booking-flow .request-quote .request-date {
+  padding: 0;
+  margin: 0 0 8px;
+}
+.booking-flow .request-quote-total strong {
+  font-size: 30px;
+}
+.booking-flow .request-quote-details {
+  margin: 8px 0;
+}
+.booking-flow .request-quote-details > summary {
+  cursor: pointer;
+  color: var(--champagne);
+  padding: 10px 0;
+  font-size: 13px;
+}
+.booking-flow .request-quote-details[open] > summary {
+  margin-bottom: 8px;
+}
+.booking-flow .calendar-days {
+  animation: booking-step-in 0.35s var(--ease);
+}
+.booking-flow [role="tabpanel"]:not([hidden]) {
+  animation: booking-step-in 0.3s var(--ease);
+}
+.calculator .service-option {
+  padding: 16px 0;
+}
+.calculator .consultation-block {
+  padding-top: 22px;
+}
+.calculator .consultation-block h3 {
+  font-size: 27px;
+  margin-top: 0;
+}
+@keyframes booking-step-in {
+  from {
+    opacity: 0.4;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 600px) {
+  .booking-flow {
+    width: calc(100% - 16px);
+    max-height: calc(100dvh - 16px);
+    scroll-padding-top: 140px;
+  }
+  .booking-flow .hero-booking {
+    padding: 20px 16px;
+  }
+  .booking-flow .booking-flow-header {
+    top: -20px;
+  }
+  .booking-flow .hero-booking-heading {
+    gap: 8px;
+  }
+  .booking-flow .hero-booking-heading h2 {
+    font-size: 28px;
+  }
+  .booking-flow .booking-tabs button {
+    font-size: 11px;
+    gap: 4px;
+  }
+  .booking-flow .hero-service-options {
+    max-height: none;
+    overflow: visible;
+  }
+  .booking-flow .hero-booking-footer .button {
+    width: 100%;
+    font-size: 11px;
+  }
+  .booking-flow .hero-meetings {
+    font-size: 12px;
+  }
+  .booking-flow .request-fields h3 {
+    font-size: 25px;
+  }
+  .booking-flow .request-quote {
+    padding: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .booking-flow [role="tabpanel"],
+  .booking-flow .calendar-days {
+    animation: none !important;
+  }
+}

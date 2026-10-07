@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+dist/
+artifacts/
+test-results/
+.data/
+.git/
+.vercel/
+.env
+.env.*
+*.log
+*.pem
+*.key
+admin-access.txt
+
+multipage/

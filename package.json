@@ -3,15 +3,49 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
-    "dev": "node scripts/serve.mjs",
-    "start": "node scripts/serve.mjs",
-    "test": "node tests/site.test.mjs"
+    "build": "node scripts/prepare-public.mjs && next build --webpack",
+    "test:seo": "node --test tests/seo.test.mjs",
+    "check:cloud": "node scripts/check-cloud.mjs",
+    "test:cloud-check": "node --test tests/cloud-check.test.mjs",
+    "dev": "next dev --webpack --hostname 127.0.0.1 --port 4173",
+    "start": "next start --hostname 127.0.0.1 --port 4173",
+    "test": "node tests/site.test.mjs",
+    "setup:admin": "node scripts/setup-admin.mjs",
+    "test:backend": "node --test tests/backend.test.mjs",
+    "test:experience": "node tests/experience.test.mjs",
+    "test:loading": "node tests/loading.test.mjs",
+    "test:mvp": "node --test tests/mvp.test.mjs",
+    "check": "node scripts/check.mjs",
+    "test:mvp-browser": "node tests/mvp-browser.test.mjs",
+    "test:content-editor": "node tests/content-editor.test.mjs",
+    "test:gallery": "node tests/gallery.test.mjs",
+    "test:booking": "node tests/booking-react.test.mjs",
+    "test:deployment": "node --test tests/deployment.test.mjs",
+    "test:deployment-browser": "node tests/deployment-browser.test.mjs",
+    "test:webkit": "node scripts/test-webkit.mjs",
+    "test:analytics": "node --test tests/analytics.test.mjs",
+    "package:release": "node scripts/package-release.mjs",
+    "test:analytics-browser": "node tests/analytics-browser.test.mjs",
+    "test:setup-admin": "node --test tests/setup-admin.test.mjs",
+    "test:admin-regressions": "node --test tests/admin-regressions.test.mjs",
+    "test:multipage": "node tests/multipage-browser.test.mjs",
+    "test:public-polish": "node tests/public-polish.test.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@fontsource-variable/cormorant-garamond": "^5.3.0",
     "@fontsource-variable/manrope": "^5.3.0",
-    "@playwright/test": "^1.63.0"
+    "@playwright/test": "^1.63.0",
+    "prettier": "3.9.9"
+  },
+  "dependencies": {
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.5"
   }
 }

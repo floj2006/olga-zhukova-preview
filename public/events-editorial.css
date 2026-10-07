@@ -1,0 +1,1179 @@
+/* Event compositions share the site's original palette and native scroll. */
+.event-detail {
+  --event-body-size: 17px;
+  --event-ink: var(--ivory);
+  --event-copy: rgba(250, 247, 239, 0.68);
+  --event-rule: rgba(201, 162, 39, 0.24);
+}
+.events-overview {
+  --event-body-size: 17px;
+}
+.public-site .events-overview .format-description {
+  font-size: var(--event-body-size);
+  line-height: 1.65;
+}
+.public-site .events-overview .format-calc-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.event-format-nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.event-format-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  min-height: 88px;
+}
+.event-format-all {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--champagne);
+  font-size: 14px;
+}
+.event-format-links {
+  min-width: 0;
+  display: flex;
+  gap: clamp(26px, 4vw, 62px);
+}
+.event-format-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  color: rgba(250, 247, 239, 0.65);
+  font-size: 14px;
+}
+.event-format-links a span {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 18px;
+}
+.event-format-links a[aria-current="page"] {
+  color: var(--ivory);
+}
+.event-format-links a[aria-current="page"]::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  content: "";
+}
+.event-editorial-intro,
+.event-editorial-scenario,
+.event-editorial-package {
+  color: var(--event-ink);
+}
+.event-editorial-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 48px 100px;
+}
+.event-editorial-intro-heading h2,
+.event-editorial-package-heading h2 {
+  margin-top: 28px;
+}
+.event-editorial-intro h2,
+.event-editorial-scenario h2,
+.event-editorial-package h2 {
+  font-size: clamp(48px, 4.8vw, 78px);
+}
+.event-editorial-lead {
+  align-self: center;
+  max-width: 640px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 2.5vw, 37px);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.event-editorial-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-column: 1 / -1;
+  gap: 38px;
+  margin: 20px 0 0;
+}
+.event-editorial-facts > div {
+  position: relative;
+  min-width: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--event-rule);
+}
+.event-editorial-index {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 20px;
+}
+.event-editorial-facts dt {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.18;
+}
+.event-editorial-facts dd {
+  max-width: 38ch;
+  margin: 14px 0 0;
+  color: var(--event-copy);
+  font-size: var(--event-body-size);
+  line-height: 1.65;
+}
+.event-editorial-image {
+  margin: 0;
+  min-width: 0;
+}
+.event-editorial-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.event-editorial-image figcaption {
+  padding-top: 13px;
+  color: var(--event-copy);
+  font-size: 12px;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+}
+.event-editorial-scenario-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+.event-editorial-scenario-heading h2 {
+  margin-top: 28px;
+}
+.event-editorial-scenario-heading > p {
+  max-width: 290px;
+  padding-bottom: 8px;
+  color: var(--event-copy);
+  font-size: var(--event-body-size);
+  line-height: 1.65;
+}
+.event-editorial-kicker {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.14em;
+}
+.event-editorial-kicker > span {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+.event-editorial-chapter-copy h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(38px, 3.7vw, 59px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+.event-editorial-chapter-copy > p:last-child {
+  max-width: 420px;
+  margin-top: 24px;
+  color: var(--event-copy);
+  font-size: var(--event-body-size);
+  line-height: 1.65;
+}
+.event-editorial-package-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: 100px;
+}
+.event-editorial-package-heading {
+  position: sticky;
+  top: 140px;
+}
+.event-editorial-package-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.event-editorial-package-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 25px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--event-rule);
+}
+.event-editorial-package-list li:first-child {
+  border-top: 1px solid var(--event-rule);
+}
+.event-editorial-package-list li > span {
+  flex: 0 0 30px;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 22px;
+}
+.event-editorial-package-list li > p {
+  font-size: var(--event-body-size);
+  line-height: 1.6;
+}
+.event-editorial-options {
+  margin-top: 28px;
+  color: var(--event-copy);
+  font-size: var(--event-body-size);
+  line-height: 1.65;
+}
+.event-editorial-package-actions {
+  display: grid;
+  justify-items: start;
+  gap: 28px;
+  margin-top: 56px;
+}
+.event-editorial-package-actions > p {
+  max-width: 420px;
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.32;
+}
+.public-site .event-detail .button,
+.public-site .events-overview .button {
+  min-height: 56px;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Wedding: a quiet opening, then a cinematic sequence with changing proportions. */
+.event-tone-wedding .inner-hero-media img {
+  object-position: 60% center;
+}
+.event-tone-wedding .event-editorial-intro-heading {
+  grid-row: 1 / 3;
+}
+.event-tone-wedding .event-editorial-facts {
+  grid-column: 2;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 0;
+}
+.event-tone-wedding .event-editorial-facts > div {
+  display: grid;
+  grid-template-columns: 35px 115px 1fr;
+  align-items: baseline;
+  gap: 10px;
+  padding-top: 20px;
+}
+.event-tone-wedding .event-editorial-index {
+  margin: 0;
+}
+.event-tone-wedding .event-editorial-facts dt {
+  font-size: 25px;
+}
+.event-tone-wedding .event-editorial-facts dd {
+  margin: 0;
+  font-size: var(--event-body-size);
+}
+.event-tone-wedding .event-editorial-scenario,
+.event-tone-graduation .event-editorial-scenario,
+.event-tone-corporate .event-editorial-intro,
+.event-tone-corporate .event-editorial-package,
+.event-tone-anniversary .event-editorial-intro,
+.event-tone-anniversary .event-editorial-package {
+  --event-ink: var(--bg);
+  --event-copy: rgba(13, 12, 10, 0.7);
+  --event-rule: rgba(13, 12, 10, 0.17);
+  background: var(--ivory);
+  color: var(--bg);
+}
+.event-tone-wedding .event-editorial-scenario h2 em,
+.event-tone-graduation .event-editorial-scenario h2 em,
+.event-tone-corporate .event-editorial-intro h2 em,
+.event-tone-corporate .event-editorial-package h2 em,
+.event-tone-anniversary .event-editorial-intro h2 em,
+.event-tone-anniversary .event-editorial-package h2 em {
+  color: var(--bg);
+}
+.event-tone-wedding .event-editorial-scenario .eyebrow,
+.event-tone-graduation .event-editorial-scenario .eyebrow,
+.event-tone-corporate .event-editorial-intro .eyebrow,
+.event-tone-corporate .event-editorial-package .eyebrow,
+.event-tone-anniversary .event-editorial-intro .eyebrow,
+.event-tone-anniversary .event-editorial-package .eyebrow {
+  color: var(--bg);
+}
+.event-story-wedding {
+  display: grid;
+  gap: 120px;
+}
+.event-wedding-chapter {
+  display: grid;
+  grid-template-columns: 0.83fr 1.17fr;
+  align-items: center;
+  gap: clamp(50px, 9vw, 150px);
+}
+.event-wedding-chapter-1 {
+  padding-inline: 6% 7%;
+}
+.event-wedding-chapter-1 .event-editorial-image img {
+  aspect-ratio: 2 / 3;
+}
+.event-wedding-chapter-2 {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+.event-wedding-chapter-2 .event-editorial-image {
+  grid-column: 2;
+  grid-row: 1;
+}
+.event-wedding-chapter-2 .event-editorial-chapter-copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+.event-wedding-chapter-2 .event-editorial-image img {
+  aspect-ratio: 5 / 4;
+}
+.event-wedding-chapter-3 {
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 8%;
+}
+.event-wedding-chapter-3 .event-editorial-image img {
+  aspect-ratio: 16 / 11;
+}
+
+/* Corporate: broad horizontal rules and a legible agenda. */
+.event-tone-corporate .event-editorial-intro-grid {
+  gap: 50px 100px;
+}
+.event-tone-corporate .event-editorial-facts {
+  gap: 70px;
+  margin-top: 28px;
+}
+.event-story-corporate {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: start;
+  gap: 100px;
+}
+.event-corporate-agenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.event-corporate-agenda li {
+  padding: 36px 0;
+  border-top: 1px solid var(--event-rule);
+}
+.event-corporate-agenda li:last-child {
+  border-bottom: 1px solid var(--event-rule);
+}
+.event-corporate-agenda .event-editorial-chapter-copy h3 {
+  font-size: clamp(35px, 3vw, 49px);
+}
+.event-corporate-agenda .event-editorial-kicker {
+  margin-bottom: 16px;
+}
+.event-corporate-visual {
+  position: sticky;
+  top: 130px;
+  margin-top: 80px;
+}
+.event-corporate-visual img {
+  aspect-ratio: 4 / 5;
+}
+.event-tone-corporate .event-editorial-package .button,
+.event-tone-anniversary .event-editorial-package .button {
+  background: var(--bg);
+  color: var(--champagne);
+}
+
+/* Anniversary: a portrait and generous space for personal stories. */
+.event-tone-anniversary .event-editorial-intro-grid {
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: 34px 100px;
+  align-items: start;
+}
+.event-intro-portrait {
+  grid-row: 1 / 4;
+  padding-right: 20px;
+}
+.event-intro-portrait img {
+  aspect-ratio: 2 / 3;
+}
+.event-tone-anniversary .event-editorial-intro-heading h2 {
+  font-size: clamp(48px, 4.4vw, 72px);
+}
+.event-tone-anniversary .event-editorial-lead {
+  grid-column: 2;
+  font-size: 28px;
+}
+.event-tone-anniversary .event-editorial-facts {
+  grid-column: 2;
+  gap: 24px;
+  margin-top: 14px;
+}
+.event-tone-anniversary .event-editorial-facts dt {
+  font-size: 26px;
+}
+.event-tone-anniversary .event-editorial-facts dd {
+  font-size: var(--event-body-size);
+}
+.event-tone-anniversary .event-editorial-scenario-heading {
+  display: block;
+  max-width: 850px;
+  margin: 0 auto 90px;
+  text-align: center;
+}
+.event-tone-anniversary .event-editorial-scenario-heading .eyebrow {
+  justify-content: center;
+}
+.event-tone-anniversary .event-editorial-scenario-heading > p {
+  max-width: 460px;
+  margin: 30px auto 0;
+}
+.event-story-anniversary {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 100px;
+  align-items: center;
+}
+.event-anniversary-stories {
+  display: grid;
+  gap: 58px;
+}
+.event-anniversary-stories .event-editorial-chapter-copy h3 {
+  font-size: clamp(36px, 3vw, 49px);
+}
+.event-anniversary-stories .event-editorial-kicker {
+  margin-bottom: 16px;
+}
+.event-anniversary-visual {
+  margin-top: 100px;
+}
+.event-anniversary-visual img {
+  aspect-ratio: 4 / 5;
+  object-position: 56% center;
+}
+
+/* Graduation: the story moves forward in three staggered beats. */
+.event-tone-graduation .event-editorial-intro-heading h2 {
+  font-size: clamp(64px, 6vw, 96px);
+}
+.event-tone-graduation .event-editorial-facts {
+  gap: 70px;
+}
+.event-story-graduation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+}
+.event-graduation-chapter {
+  min-width: 0;
+}
+.event-graduation-chapter:nth-child(2) {
+  margin-top: 100px;
+}
+.event-graduation-chapter:nth-child(3) {
+  margin-top: 200px;
+}
+.event-graduation-number {
+  display: block;
+  margin-bottom: 22px;
+  font-family: var(--serif);
+  font-size: clamp(80px, 8vw, 126px);
+  line-height: 0.8;
+  letter-spacing: -0.065em;
+  color: var(--gold);
+}
+.event-graduation-chapter .event-editorial-image img {
+  aspect-ratio: 1;
+}
+.event-graduation-chapter:nth-child(2) .event-editorial-image img {
+  aspect-ratio: 4 / 5;
+}
+.event-graduation-chapter:nth-child(3) .event-editorial-image img {
+  aspect-ratio: 6 / 5;
+}
+.event-graduation-chapter .event-editorial-chapter-copy {
+  margin-top: 30px;
+}
+.event-graduation-chapter .event-editorial-kicker {
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+.event-graduation-chapter .event-editorial-kicker > span {
+  display: none;
+}
+.event-graduation-chapter .event-editorial-chapter-copy h3 {
+  font-size: clamp(36px, 3.4vw, 54px);
+}
+.event-graduation-chapter .event-editorial-chapter-copy > p:last-child {
+  margin-top: 18px;
+  font-size: var(--event-body-size);
+}
+
+/* The overview introduces people before the shared editorial format collection. */
+.events-editorial-opening-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(150px, 0.4fr);
+  align-items: center;
+  gap: 70px;
+}
+.events-editorial-opening h2 {
+  margin-top: 26px;
+}
+.events-editorial-opening-copy {
+  padding-top: 48px;
+}
+.events-editorial-opening-copy > p {
+  color: rgba(250, 247, 239, 0.7);
+  font-family: var(--serif);
+  font-size: 27px;
+  line-height: 1.4;
+}
+.events-editorial-opening-copy .text-link {
+  margin-top: 30px;
+  font-size: 14px;
+}
+.events-editorial-experience {
+  border-left: 1px solid var(--line);
+  padding-left: 32px;
+  color: rgba(250, 247, 239, 0.65);
+  font-size: var(--event-body-size);
+  line-height: 1.6;
+}
+.events-editorial-experience > span {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--champagne);
+  font-family: var(--serif);
+  font-size: 80px;
+  line-height: 0.8;
+  letter-spacing: -0.045em;
+}
+.events-editorial-next {
+  border-top: 1px solid var(--line);
+}
+.events-editorial-next-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 1fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: 50px;
+}
+.events-editorial-next-grid > .eyebrow {
+  margin-top: 10px;
+}
+.events-editorial-next-copy > p {
+  max-width: 360px;
+  color: rgba(250, 247, 239, 0.7);
+  font-size: var(--event-body-size);
+}
+.events-editorial-next-copy .button {
+  margin-top: 32px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .event-format-links a,
+  .event-format-all {
+    transition: color 0.25s ease;
+  }
+  .event-format-links a:hover,
+  .event-format-all:hover {
+    color: var(--champagne);
+  }
+  .event-tone-corporate .event-editorial-package .button:hover,
+  .event-tone-anniversary .event-editorial-package .button:hover {
+    background: var(--gold);
+    color: var(--bg);
+  }
+}
+@media (max-width: 1100px) {
+  .event-editorial-intro-grid,
+  .event-editorial-package-grid,
+  .event-story-corporate,
+  .event-story-anniversary {
+    gap: 50px;
+  }
+  .event-tone-anniversary .event-editorial-intro-grid {
+    gap: 30px 50px;
+  }
+  .event-tone-wedding .event-editorial-facts > div {
+    grid-template-columns: 25px 1fr;
+  }
+  .event-tone-wedding .event-editorial-facts dd {
+    grid-column: 2;
+  }
+  .event-wedding-chapter-1 {
+    padding-inline: 0;
+  }
+  .event-editorial-scenario-heading {
+    gap: 50px;
+  }
+  .events-editorial-opening-grid {
+    gap: 35px;
+  }
+  .events-editorial-next-grid {
+    grid-template-columns: 0.8fr 1fr;
+  }
+  .events-editorial-next-grid > .eyebrow {
+    grid-column: 1 / -1;
+  }
+  .event-tone-anniversary .event-editorial-facts {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .events-editorial-opening-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 0.45fr);
+    align-items: start;
+    gap: 36px 50px;
+  }
+  .events-editorial-opening-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .events-editorial-opening-copy {
+    max-width: 620px;
+    padding-top: 0;
+  }
+  .events-editorial-experience {
+    justify-self: end;
+  }
+  .event-story-graduation {
+    grid-template-columns: 1fr;
+    gap: 72px;
+  }
+  .event-graduation-chapter {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 0 48px;
+  }
+  .event-graduation-chapter:nth-child(2),
+  .event-graduation-chapter:nth-child(3) {
+    margin-top: 0;
+  }
+  .event-graduation-number {
+    grid-column: 1;
+    font-size: 90px;
+  }
+  .event-graduation-chapter .event-editorial-image {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .event-graduation-chapter .event-editorial-chapter-copy {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+  }
+  .event-graduation-chapter .event-editorial-chapter-copy h3 {
+    font-size: clamp(40px, 4.5vw, 50px);
+  }
+}
+@media (max-width: 900px) {
+  .event-format-nav-inner {
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+    padding-block: 18px;
+  }
+  .event-format-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .event-format-links a {
+    gap: 8px;
+    font-size: 14px;
+  }
+  .event-format-links a span {
+    font-size: 16px;
+  }
+  .event-editorial-intro-grid,
+  .event-editorial-package-grid,
+  .event-tone-anniversary .event-editorial-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .event-editorial-intro h2,
+  .event-editorial-scenario h2,
+  .event-editorial-package h2,
+  .event-tone-anniversary .event-editorial-intro-heading h2,
+  .event-tone-graduation .event-editorial-intro-heading h2 {
+    font-size: clamp(44px, 7.8vw, 64px);
+  }
+  .event-editorial-lead {
+    max-width: 600px;
+    font-size: 27px;
+  }
+  .event-tone-wedding .event-editorial-intro-heading {
+    grid-row: auto;
+  }
+  .event-tone-wedding .event-editorial-facts,
+  .event-tone-anniversary .event-editorial-lead,
+  .event-tone-anniversary .event-editorial-facts {
+    grid-column: 1;
+  }
+  .event-editorial-facts,
+  .event-tone-corporate .event-editorial-facts,
+  .event-tone-graduation .event-editorial-facts {
+    gap: 22px;
+    margin-top: 8px;
+  }
+  .event-editorial-facts dt {
+    font-size: 27px;
+  }
+  .event-editorial-facts dd {
+    font-size: var(--event-body-size);
+  }
+  .event-tone-wedding .event-editorial-facts > div {
+    grid-template-columns: 28px 110px 1fr;
+  }
+  .event-tone-wedding .event-editorial-facts dd {
+    grid-column: auto;
+  }
+  .event-intro-portrait {
+    grid-row: 2;
+    width: min(70%, 330px);
+    padding: 0;
+  }
+  .event-tone-anniversary .event-editorial-intro-heading {
+    grid-row: 1;
+  }
+  .event-editorial-scenario-heading {
+    display: block;
+    margin-bottom: 60px;
+  }
+  .event-editorial-scenario-heading > p {
+    max-width: 430px;
+    margin-top: 25px;
+    padding-bottom: 0;
+  }
+  .event-editorial-chapter-copy h3 {
+    font-size: 42px;
+  }
+  .event-editorial-chapter-copy > p:last-child {
+    margin-top: 18px;
+    font-size: var(--event-body-size);
+  }
+  .event-story-wedding {
+    gap: 75px;
+  }
+  .event-wedding-chapter,
+  .event-wedding-chapter-2,
+  .event-wedding-chapter-3 {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .event-story-corporate,
+  .event-story-anniversary {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .event-corporate-visual {
+    position: static;
+    margin: 0;
+  }
+  .event-corporate-visual img {
+    aspect-ratio: 4 / 3;
+  }
+  .event-anniversary-visual {
+    margin: 0;
+    width: 90%;
+    margin-left: auto;
+  }
+  .event-anniversary-visual img {
+    aspect-ratio: 5 / 4;
+  }
+  .event-tone-anniversary .event-editorial-scenario-heading {
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  .event-tone-anniversary .event-editorial-scenario-heading .eyebrow {
+    justify-content: start;
+  }
+  .event-tone-anniversary .event-editorial-scenario-heading > p {
+    margin: 25px 0 0;
+  }
+  .event-anniversary-stories {
+    gap: 38px;
+  }
+  .event-story-graduation {
+    gap: 60px;
+  }
+  .event-graduation-chapter {
+    gap: 0 32px;
+  }
+  .event-graduation-chapter:nth-child(2),
+  .event-graduation-chapter:nth-child(3) {
+    margin-top: 0;
+  }
+  .event-graduation-number {
+    font-size: 75px;
+  }
+  .event-graduation-chapter .event-editorial-chapter-copy h3 {
+    font-size: 40px;
+    overflow-wrap: normal;
+  }
+  .event-graduation-chapter .event-editorial-kicker {
+    font-size: 12px;
+  }
+  .event-editorial-package-heading {
+    position: static;
+  }
+  .event-editorial-package-actions {
+    margin-top: 35px;
+  }
+  .events-editorial-opening-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 35px;
+    align-items: start;
+  }
+  .events-editorial-opening-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .events-editorial-opening-copy {
+    padding: 0;
+  }
+  .events-editorial-opening-copy > p {
+    font-size: 25px;
+  }
+  .events-editorial-experience {
+    justify-self: end;
+  }
+  .events-editorial-next-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .event-format-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+  .event-format-links a {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .event-format-links a[aria-current="page"]::after {
+    right: 20%;
+  }
+  .event-editorial-facts,
+  .event-tone-anniversary .event-editorial-facts,
+  .event-tone-corporate .event-editorial-facts,
+  .event-tone-graduation .event-editorial-facts {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .event-editorial-facts > div {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 0 15px;
+    padding-top: 18px;
+  }
+  .event-editorial-index {
+    grid-row: 1 / 3;
+    margin: 0;
+  }
+  .event-editorial-facts dd {
+    grid-column: 2;
+    margin-top: 10px;
+    max-width: none;
+  }
+  .event-tone-wedding .event-editorial-facts > div {
+    grid-template-columns: 28px 1fr;
+    gap: 0 15px;
+  }
+  .event-tone-wedding .event-editorial-facts dd {
+    grid-column: 2;
+    margin-top: 10px;
+  }
+  .event-tone-anniversary .event-editorial-facts dt {
+    font-size: 27px;
+  }
+  .event-intro-portrait {
+    width: 80%;
+    margin-left: auto;
+  }
+  .event-wedding-chapter,
+  .event-wedding-chapter-2,
+  .event-wedding-chapter-3 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .event-wedding-chapter-1 .event-editorial-image {
+    width: 78%;
+  }
+  .event-wedding-chapter-2 .event-editorial-image,
+  .event-wedding-chapter-2 .event-editorial-chapter-copy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .event-wedding-chapter-2 .event-editorial-image {
+    width: 90%;
+    margin-left: auto;
+  }
+  .event-wedding-chapter-3 .event-editorial-image img {
+    aspect-ratio: 4 / 3;
+  }
+  .event-editorial-chapter-copy h3,
+  .event-corporate-agenda .event-editorial-chapter-copy h3,
+  .event-anniversary-stories .event-editorial-chapter-copy h3 {
+    font-size: 39px;
+  }
+  .event-story-graduation {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+  .event-graduation-chapter:nth-child(2),
+  .event-graduation-chapter:nth-child(3) {
+    margin-top: 0;
+  }
+  .event-graduation-chapter {
+    display: block;
+    position: relative;
+  }
+  .event-graduation-number {
+    font-size: 84px;
+    margin-bottom: 24px;
+  }
+  .event-graduation-chapter:nth-child(2) .event-editorial-image {
+    width: 84%;
+    margin-left: auto;
+  }
+  .event-graduation-chapter:nth-child(3) .event-editorial-image {
+    width: 92%;
+  }
+  .event-graduation-chapter .event-editorial-chapter-copy h3 {
+    font-size: 43px;
+    overflow-wrap: normal;
+  }
+  .event-graduation-chapter .event-editorial-kicker {
+    font-size: 12px;
+  }
+  .event-graduation-chapter .event-editorial-chapter-copy {
+    margin-top: 28px;
+  }
+  .event-graduation-chapter .event-editorial-chapter-copy > p:last-child {
+    max-width: none;
+  }
+  .event-editorial-package-list li {
+    gap: 15px;
+    padding: 20px 0;
+  }
+  .event-editorial-package-list li > p {
+    font-size: var(--event-body-size);
+  }
+  .event-editorial-package-actions > p {
+    font-size: 26px;
+  }
+  .event-editorial-package-actions .button {
+    width: 100%;
+  }
+  .events-editorial-opening-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .events-editorial-experience {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    justify-self: start;
+    padding: 25px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .events-editorial-experience > span {
+    margin: 0;
+    font-size: 75px;
+  }
+  .events-editorial-next-copy .button {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-format-links a,
+  .event-format-all,
+  .event-detail .event-editorial-image img {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Numbering belongs to each definition term; light surfaces use the original black ink. */
+.event-tone-wedding .event-editorial-facts > div {
+  grid-template-columns: 155px minmax(0, 1fr);
+}
+.event-tone-wedding .event-editorial-facts dt {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+.event-tone-wedding .event-editorial-facts dt .event-editorial-index {
+  margin-bottom: 0;
+}
+.event-tone-wedding .event-editorial-scenario .event-editorial-kicker > span,
+.event-tone-graduation .event-editorial-scenario .event-graduation-number,
+.event-tone-corporate .event-editorial-intro .event-editorial-index,
+.event-tone-anniversary .event-editorial-intro .event-editorial-index,
+.event-tone-corporate .event-editorial-package-list li > span,
+.event-tone-anniversary .event-editorial-package-list li > span {
+  color: var(--bg);
+}
+@media (max-width: 1100px) {
+  .event-tone-wedding .event-editorial-facts > div {
+    display: block;
+  }
+  .event-tone-wedding .event-editorial-facts dd {
+    margin-top: 12px;
+    margin-left: 35px;
+  }
+}
+@media (max-width: 600px) {
+  .event-detail .event-editorial-facts > div {
+    display: block;
+  }
+  .event-detail .event-editorial-facts dt {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+  }
+  .event-detail .event-editorial-facts dt .event-editorial-index {
+    flex: 0 0 28px;
+    margin: 0;
+  }
+  .event-detail .event-editorial-facts dd {
+    margin-top: 10px;
+    margin-left: 43px;
+  }
+}
+
+/* Text and grid items keep a readable measure across the four editorial stories. */
+.event-editorial-intro-grid > *,
+.event-editorial-package-grid > *,
+.event-editorial-scenario-heading > *,
+.event-wedding-chapter > *,
+.event-story-corporate > *,
+.event-story-anniversary > *,
+.events-editorial-opening-grid > *,
+.events-editorial-next-grid > * {
+  min-width: 0;
+}
+.event-editorial-facts dd,
+.event-editorial-chapter-copy > p:last-child,
+.event-editorial-options,
+.events-editorial-next-copy > p {
+  overflow-wrap: break-word;
+}
+.event-editorial-scenario-heading > p {
+  flex: 0 1 340px;
+  max-width: 340px;
+}
+.events-editorial-next-copy > p {
+  line-height: 1.65;
+}
+@media (max-width: 900px) {
+  .event-detail,
+  .events-overview {
+    --event-body-size: 16px;
+  }
+  .event-editorial-intro-grid,
+  .event-tone-corporate .event-editorial-intro-grid {
+    gap: 36px;
+  }
+  .event-detail .event-editorial-facts {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+    gap: 26px;
+  }
+  .event-detail .event-editorial-facts > div {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.3fr);
+    gap: 24px;
+    align-items: baseline;
+    padding-top: 22px;
+  }
+  .event-detail .event-editorial-facts dt {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .event-detail .event-editorial-facts dt .event-editorial-index {
+    flex: 0 0 28px;
+    margin: 0;
+  }
+  .event-detail .event-editorial-facts dd {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+  }
+  .event-editorial-scenario-heading {
+    margin-bottom: 56px;
+  }
+  .event-tone-anniversary .event-editorial-scenario-heading {
+    margin-bottom: 56px;
+  }
+  .event-editorial-package-grid {
+    gap: 36px;
+  }
+  .event-editorial-package-list li {
+    padding-block: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .event-format-links {
+    column-gap: 18px;
+  }
+  .event-detail .event-editorial-facts > div {
+    display: block;
+  }
+  .event-detail .event-editorial-facts dd {
+    margin: 12px 0 0 42px;
+  }
+  .event-editorial-lead,
+  .event-tone-anniversary .event-editorial-lead {
+    font-size: 26px;
+    line-height: 1.45;
+  }
+  .event-editorial-chapter-copy h3,
+  .event-corporate-agenda .event-editorial-chapter-copy h3,
+  .event-anniversary-stories .event-editorial-chapter-copy h3,
+  .event-graduation-chapter .event-editorial-chapter-copy h3 {
+    font-size: clamp(36px, 9.5vw, 43px);
+    line-height: 1.08;
+  }
+  .event-story-wedding {
+    gap: 64px;
+  }
+  .event-editorial-package-list li {
+    gap: 16px;
+    padding-block: 22px;
+  }
+  .event-editorial-package-actions {
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .event-editorial-package-actions > p {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+  .events-editorial-experience {
+    gap: 24px;
+    padding-top: 28px;
+  }
+}
+@media (max-height: 740px) and (min-width: 901px) {
+  .event-editorial-package-heading,
+  .event-corporate-visual {
+    position: static;
+  }
+}
